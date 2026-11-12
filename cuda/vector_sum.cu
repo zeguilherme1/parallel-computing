@@ -30,7 +30,7 @@ int main(void) {
 
     add<<<N, 1>>>(dev_a, dev_b, dev_c);
 
-    cudaMemcpy(dev_c, c, N*sizeof(int), cudaMemcpyDeviceToHost);
+    cudaMemcpy(c, dev_c, N*sizeof(int), cudaMemcpyDeviceToHost);
 
     for(int i = 0; i < N; i++){
         printf("%d ", c[i]);
